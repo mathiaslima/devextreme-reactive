@@ -30,19 +30,25 @@ const RootBase = ({
     <div
       className={classNames(classes.root, className)}
       ref={rootRef}
+      style={{
+         display: 'flex',
+         flexDirection: 'row',    
+         justifyContent: 'center',
+      }}
       {...restProps}
     >
       <NavigationButton
         type="back"
         onClick={navigateBack}
       />
-      <NavigationButton
-        type="forward"
-        onClick={navigateForward}
-      />
+
       <OpenButton
         onVisibilityToggle={onVisibilityToggle}
         text={navigatorText}
+      />
+      <NavigationButton
+        type="forward"
+        onClick={navigateForward}
       />
     </div>
   );
